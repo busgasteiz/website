@@ -40,6 +40,13 @@
             text-align: center;
         }
 
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
         .icon {
             width: 120px;
             height: 120px;
@@ -77,12 +84,49 @@
                 display: block;
             }
         }
+
+        @media (orientation: landscape) and (max-height: 600px) {
+            body {
+                justify-content: space-between;
+            }
+
+            main {
+                flex-direction: row;
+                align-items: center;
+                padding: 1.5rem 2rem;
+                gap: 2rem;
+                width: 100%;
+            }
+
+            .hero {
+                flex: 1;
+                justify-content: center;
+            }
+
+            .icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            p.description {
+                flex: 1;
+                font-size: 1rem;
+                max-width: none;
+            }
+
+            footer {
+                width: 100%;
+                padding: 0.75rem 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <main>
-        <img class="icon" src="icon.png" alt="Icono de BusGasteiz">
-        <h1>BusGasteiz</h1>
+        <div class="hero">
+            <img class="icon" src="icon.png" alt="Icono de BusGasteiz">
+            <h1>BusGasteiz</h1>
+        </div>
         <p class="description">Visualizador de la información en tiempo real de los autobuses urbanos y tranvía de Vitoria-Gasteiz.</p>
     </main>
     <footer>
