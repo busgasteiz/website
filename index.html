@@ -49,6 +49,24 @@
             color: var(--text);
         }
 
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .app-store-link {
+            display: inline-block;
+            margin: 0.625rem 0;
+        }
+
+        .app-store-badge {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
         .legal-links {
             display: flex;
             gap: 1.5rem;
@@ -81,7 +99,7 @@
             }
 
             .hero {
-                flex: 1;
+                flex: 0 0 auto;
                 justify-content: center;
             }
 
@@ -90,8 +108,15 @@
                 height: 80px;
             }
 
-            p.description {
+            .main-content {
                 flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            p.description {
                 font-size: 1rem;
                 max-width: none;
             }
@@ -110,11 +135,16 @@
             <img class="icon" src="icon.png" alt="Icono de BusGasteiz">
             <h1>BusGasteiz</h1>
         </div>
-        <p class="description">Visualizador de la información en tiempo real de los autobuses urbanos y tranvía de Vitoria-Gasteiz.</p>
-        <nav class="legal-links">
-            <a href="privacy.html">Política de privacidad</a>
-            <a href="terms.html">Términos y condiciones</a>
-        </nav>
+        <div class="main-content">
+            <p class="description">Visualizador de la información en tiempo real de los autobuses urbanos y tranvía de Vitoria-Gasteiz.</p>
+            <a href="https://apps.apple.com/us/app/busgasteiz/id6762233839" class="app-store-link">
+                <img src="app_store_es.svg" alt="Descargar en el App Store" class="app-store-badge">
+            </a>
+            <nav class="legal-links">
+                <a href="privacy.html">Política de privacidad</a>
+                <a href="terms.html">Términos y condiciones</a>
+            </nav>
+        </div>
     </main>
     <footer>
         <p>© 2026 Ion Jaureguialzo Sarasola.<br class="mobile-break"> Todos los derechos reservados.</p>
