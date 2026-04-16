@@ -65,6 +65,17 @@
             padding: 1.5rem;
             font-size: .8125rem;
             color: var(--subtle);
+            text-align: center;
+        }
+
+        .mobile-break {
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .mobile-break {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -75,7 +86,7 @@
         <p class="description">Visualizador de la información en tiempo real de los autobuses urbanos y tranvía de Vitoria-Gasteiz.</p>
     </main>
     <footer>
-        <p>© 2026 Ion Jaureguialzo Sarasola. Todos los derechos reservados.</p>
+        <p>© 2026 Ion Jaureguialzo Sarasola.<br class="mobile-break"> Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
