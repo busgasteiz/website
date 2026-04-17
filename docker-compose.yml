@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx:mainline
+    environment:
+      - TZ=Europe/Madrid
+    ports:
+      - "80:80"
+    volumes:
+      - ${PWD}:/usr/share/nginx/html:ro
