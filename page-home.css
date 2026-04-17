@@ -1,0 +1,118 @@
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.icon {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+}
+
+h1 {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+p.description {
+    font-size: clamp(1.125rem, 4vw, 1.375rem);
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 36rem;
+    color: var(--text);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.app-store-link {
+    display: inline-block;
+    margin: 0.625rem 0;
+}
+
+.app-store-badge {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: .9375rem;
+    margin-top: 0.5em;
+}
+
+.mobile-break {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .mobile-break {
+        display: block;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+    body {
+        justify-content: space-between;
+    }
+
+    main {
+        flex-direction: row;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .hero {
+        flex: 0 0 33%;
+        justify-content: center;
+    }
+
+    .icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    p.description {
+        font-size: 1rem;
+        max-width: none;
+    }
+
+    footer {
+        width: 100%;
+        padding: 0.5rem 1.5rem calc(0.5rem + env(safe-area-inset-bottom));
+        font-size: .6875rem;
+    }
+}
