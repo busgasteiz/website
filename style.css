@@ -21,6 +21,24 @@ body {
     flex-direction: column;
 }
 
+header {
+    padding: 1.25rem 1.5rem 0;
+    font-size: .9375rem;
+    display: flex;
+    align-items: center;
+}
+
+.lang-bar {
+    margin-left: auto;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.lang-bar a.active {
+    font-weight: 600;
+    color: var(--text);
+}
+
 footer {
     padding: 1.5rem;
     font-size: .8125rem;

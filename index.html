@@ -1,153 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>BusGasteiz</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        :root {
-            --radius: 22.37%;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            padding: 3rem 1.5rem;
-            text-align: center;
-        }
-
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.25rem;
-        }
-
-        .icon {
-            width: 120px;
-            height: 120px;
-            border-radius: var(--radius);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
-        }
-
-        h1 {
-            font-size: clamp(1.75rem, 6vw, 2.25rem);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        p.description {
-            font-size: clamp(1.125rem, 4vw, 1.375rem);
-            font-weight: 400;
-            line-height: 1.5;
-            max-width: 36rem;
-            color: var(--text);
-        }
-
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .app-store-link {
-            display: inline-block;
-            margin: 0.625rem 0;
-        }
-
-        .app-store-badge {
-            height: 40px;
-            width: auto;
-            display: block;
-        }
-
-        .legal-links {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            font-size: .9375rem;
-        }
-
-        .mobile-break {
-            display: none;
-        }
-
-        @media (max-width: 480px) {
-            .mobile-break {
-                display: block;
+    <script>
+        (function () {
+            var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'es'];
+            var supported = ['eu', 'es', 'en'];
+            var chosen = 'es';
+            for (var i = 0; i < langs.length; i++) {
+                var l = langs[i].toLowerCase().split('-')[0];
+                if (supported.indexOf(l) !== -1) { chosen = l; break; }
             }
-        }
-
-        @media (orientation: landscape) and (max-height: 600px) {
-            body {
-                justify-content: space-between;
-            }
-
-            main {
-                flex-direction: row;
-                align-items: center;
-                padding: 1.5rem 2rem;
-                gap: 2rem;
-                width: 100%;
-            }
-
-            .hero {
-                flex: 0 0 33%;
-                justify-content: center;
-            }
-
-            .icon {
-                width: 80px;
-                height: 80px;
-            }
-
-            .main-content {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.75rem;
-            }
-
-            p.description {
-                font-size: 1rem;
-                max-width: none;
-            }
-
-            footer {
-                width: 100%;
-                padding: 0.5rem 1.5rem calc(0.5rem + env(safe-area-inset-bottom));
-                font-size: .6875rem;
-            }
-        }
-    </style>
+            window.location.replace(chosen + '/');
+        })();
+    </script>
 </head>
-<body>
-    <main>
-        <div class="hero">
-            <img class="icon" src="icon.png" alt="Icono de BusGasteiz">
-            <h1>BusGasteiz</h1>
-        </div>
-        <div class="main-content">
-            <p class="description">Visualizador de la información en tiempo real de los autobuses urbanos y tranvía de Vitoria-Gasteiz.</p>
-            <a href="https://apps.apple.com/us/app/busgasteiz/id6762233839" class="app-store-link" target="_blank" rel="noopener">
-                <img src="app_store_es.svg" alt="Descargar en el App Store" class="app-store-badge">
-            </a>
-            <nav class="legal-links">
-                <a href="privacy.html">Política de privacidad</a>
-                <a href="terms.html">Términos y condiciones</a>
-            </nav>
-        </div>
-    </main>
-    <footer>
-        <p>© 2026 Ion Jaureguialzo Sarasola.<br class="mobile-break"> Todos los derechos reservados.</p>
-    </footer>
-</body>
+<body></body>
 </html>
