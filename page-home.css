@@ -45,8 +45,16 @@ p.description {
 }
 
 .app-store-link {
-    display: inline-block;
-    margin: 0.625rem 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+.store-badges {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .app-store-badge {
