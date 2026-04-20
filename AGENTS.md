@@ -15,6 +15,9 @@ website/
 ├── icon.png                # Icono de la app (usado en el hero de la landing)
 ├── app_store_en.svg        # Badge "Download on the App Store" (inglés)
 ├── app_store_es.svg        # Badge "Descargar en el App Store" (castellano/euskera)
+├── play_store_en.svg       # Badge "Get it on Google Play" (inglés)
+├── play_store_es.svg       # Badge "Disponible en Google Play" (castellano)
+├── play_store_eu.svg       # Badge "Eskuratu Google Play-n" (euskera)
 ├── CNAME                   # Dominio personalizado de GitHub Pages: busgasteiz.eu
 ├── docker-compose.yml      # Servidor nginx local para desarrollo
 ├── Makefile                # Atajos: make start / stop / restart
@@ -82,3 +85,21 @@ Requiere **Docker** instalado y en ejecución.
   y los de páginas de contenido (privacidad, términos) en `page-content.css`.
 - No añadir dependencias externas ni herramientas de build: la web debe poder abrirse directamente
   en un navegador sin compilación previa.
+
+---
+
+## Badges de descarga
+
+Los dos badges (App Store y Google Play) se muestran **en fila** mediante el contenedor
+`.store-badges` (`display: flex; gap: 1rem; align-items: center; flex-wrap: wrap`).
+Ambos comparten la clase `.app-store-badge` con `height: 48px; width: auto`.
+
+| Idioma | Badge iOS           | Badge Android        |
+|--------|---------------------|----------------------|
+| `en/`  | `app_store_en.svg`  | `play_store_en.svg`  |
+| `es/`  | `app_store_es.svg`  | `play_store_es.svg`  |
+| `eu/`  | `app_store_en.svg`  | `play_store_eu.svg`  |
+
+URLs de las tiendas:
+- App Store: `https://apps.apple.com/us/app/busgasteiz/id6762233839`
+- Google Play: `https://play.google.com/store/apps/details?id=com.jaureguialzo.busgasteiz`
